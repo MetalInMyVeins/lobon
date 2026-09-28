@@ -30,6 +30,17 @@ TEST(String, Memcpy)
 	EXPECT_EQ(syslibc_strlen(t), 4);
 }
 
+TEST(String, Memmove)
+{
+	char str[] = "ABCDEFGHI";
+	const char* s1 = (const char*)syslibc_memmove(str, str + 1, 5);
+	EXPECT_STREQ(s1, "BCDEFFGHI");
+	const char* s2 = (const char*)syslibc_memmove(str + 6, str + 3, 3);
+	EXPECT_STREQ(s2, "EFF");
+	const char* s3 = (const char*)syslibc_memmove(str + 2, str + 1, 4);
+	EXPECT_STREQ(s3, "CDEFEFF");
+}
+
 TEST(String, Memset)
 {
 	char* s = (char*)malloc(5);

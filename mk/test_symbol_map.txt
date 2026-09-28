@@ -1,5 +1,6 @@
 memcmp syslibc_memcmp
 memcpy syslibc_memcpy
+memmove syslibc_memmove
 memset syslibc_memset
 strcmp syslibc_strcmp
 strlen syslibc_strlen
