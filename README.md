@@ -28,7 +28,7 @@ Minimal libc implementation in assembly using linux syscalls.
 - [ ] malloc
 - [X] memcmp
 - [X] memcpy
-- [ ] memmove
+- [X] memmove
 - [X] memset
 - [ ] printf
 - [ ] realloc
