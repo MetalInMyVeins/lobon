@@ -7,12 +7,12 @@ extern "C" {
 
 #include "stddef.h"
 
-int memcmp(const void* restrict, const void* restrict, size_t);
-void* memcpy(void* restrict, const void* restrict, size_t);
-void* memmove(void*, const void*, size_t);
-void* memset(void*, int, size_t);
-int strcmp(const char*, const char*);
-size_t strlen(const char*);
+int memcmp(const void* restrict s1, const void* restrict s2, size_t n);
+void* memcpy(void* restrict dest, const void* restrict src, size_t n);
+void* memmove(void* dest, const void* src, size_t n);
+void* memset(void* a, int c, size_t n);
+int strcmp(const char* s1, const char* s2);
+size_t strlen(const char* s);
 
 #ifdef __cplusplus
 }
