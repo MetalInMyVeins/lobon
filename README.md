@@ -35,7 +35,7 @@ Minimal libc implementation in assembly using linux syscalls.
 - [ ] scanf
 - [ ] strcasecmp
 - [X] strcmp
-- [ ] strcpy
+- [X] strcpy
 - [X] strlen
 - [ ] strncasecmp
 - [ ] strncmp
