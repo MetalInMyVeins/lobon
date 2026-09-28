@@ -76,6 +76,23 @@ TEST(String, Strcmp)
 	EXPECT_EQ(x, y);
 }
 
+TEST(String, Strcpy)
+{
+	const char* s1 = "asdfghij";
+	char* s2 = (char*)malloc(15);
+	const char* t = syslibc_strcpy(s2, s1);
+	EXPECT_EQ(t[0], 'a');
+	EXPECT_EQ(t[1], 's');
+	EXPECT_EQ(t[2], 'd');
+	EXPECT_EQ(t[3], 'f');
+	EXPECT_EQ(t[4], 'g');
+	EXPECT_EQ(t[5], 'h');
+	EXPECT_EQ(t[6], 'i');
+	EXPECT_EQ(t[7], 'j');
+	EXPECT_EQ(t[8], '\0');
+	EXPECT_EQ(syslibc_strlen(t), 8);
+}
+
 TEST(String, Strlen)
 {
 	const char* s = "asdf";
