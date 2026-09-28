@@ -64,6 +64,14 @@ TEST(String, Memset)
 	free(ptr);
 }
 
+TEST(String, Strcat)
+{
+	char dest[20] = "asdf";
+	const char* src = "ghij";
+	const char* t = syslibc_strcat(dest, src);
+	EXPECT_STREQ(t, "asdfghij");
+}
+
 TEST(String, Strcmp)
 {
 	const char* s1 = "iamamachine";
