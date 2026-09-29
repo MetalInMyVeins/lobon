@@ -1,4 +1,5 @@
 atoi syslibc_atoi
+calloc syslibc_calloc
 free syslibc_free
 malloc syslibc_malloc
 memchr syslibc_memchr
@@ -8,6 +9,7 @@ memmove syslibc_memmove
 memset syslibc_memset
 printf syslibc_printf
 realloc syslibc_realloc
+reallocarray syslibc_reallocarray
 scanf syslibc_scanf
 strcat syslibc_strcat
 strcmp syslibc_strcmp

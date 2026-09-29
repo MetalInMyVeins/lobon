@@ -27,6 +27,7 @@ Minimal libc implementation in assembly using linux syscalls.
 # Supported Functions
 
 - [ ] atoi
+- [ ] calloc
 - [ ] free
 - [ ] malloc
 - [X] memchr
@@ -36,6 +37,7 @@ Minimal libc implementation in assembly using linux syscalls.
 - [X] memset
 - [ ] printf
 - [ ] realloc
+- [ ] reallocarray
 - [ ] scanf
 - [X] strcat
 - [X] strcmp
