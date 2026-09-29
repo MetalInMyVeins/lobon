@@ -6,3 +6,4 @@ strcat syslibc_strcat
 strcmp syslibc_strcmp
 strcpy syslibc_strcpy
 strlen syslibc_strlen
+tolower syslibc_tolower
