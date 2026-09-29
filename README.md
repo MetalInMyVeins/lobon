@@ -1,6 +1,7 @@
 # syslibc
 
-[![CI](https://github.com/MetalInMyVeins/syslibc/actions/workflows/ci.yaml/badge.svg)](https://github.com/MetalInMyVeins/syslibc/actions/workflows/ci.yaml)
+[![syslibc](https://github.com/MetalInMyVeins/syslibc/actions/workflows/syslibc.yaml/badge.svg)](https://github.com/MetalInMyVeins/syslibc/actions/workflows/syslibc.yaml)
+[![tests](https://github.com/MetalInMyVeins/syslibc/actions/workflows/tests.yaml/badge.svg)](https://github.com/MetalInMyVeins/syslibc/actions/workflows/tests.yaml)
 
 Minimal libc implementation in assembly using linux syscalls.
 
