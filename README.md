@@ -28,7 +28,7 @@ Minimal libc implementation in assembly using linux syscalls.
 - [ ] atoi
 - [ ] free
 - [ ] malloc
-- [ ] memchr
+- [X] memchr
 - [X] memcmp
 - [X] memcpy
 - [X] memmove
