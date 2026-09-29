@@ -5,26 +5,26 @@
 
 Minimal libc implementation in assembly using linux syscalls.
 
-# Target Architecture
+# Target Architecture + Platform
 
-- x86_64
+- x86_64 + Linux
 
 # Dependencies
 
-- `nasm`: for assembling the assembly sources
-- `ld.lld` or `ld`: for linking assembly object files
-- `clang` or `gcc`: for building debug C programs
-- `clang++` or `g++`: for buidling test C++ programs
-- `gtest`: for the tests
+- `nasm`: assembler
+- `ld.lld` or `ld`: linker
+- `clang` or `gcc`: compiler
+- `clang++` or `g++`: compiler for test files
+- `gtest`: test suite
 
-#### Tested versions of the given dependencies:
+### Tested Versions of Dependencies:
 
 - `nasm`: 3.02
 - `clang`: 22.1.8
 - `gcc`: 16.2.1
 - `gtest`: 1.18.0
 
-# Functionality
+# Supported Functions
 
 - [ ] atoi
 - [ ] free
@@ -49,4 +49,4 @@ Minimal libc implementation in assembly using linux syscalls.
 
 # LLM Ban
 
-This is a personal educational project. It makes absolutely zero sense to use an LLM to generate code in an educational project while the sole purpose was to be proficient in assembly. So every single line is hand-written. LLMs are strictly prohibited.
+This is a personal educational project. It makes absolutely zero sense to use generative AI in an educational project while the sole purpose is to be proficient in assembly, which needs significant mental gymnastics. So every single line is hand-written. LLMs are strictly prohibited.
