@@ -130,3 +130,13 @@ TEST(String, Strlen)
 	EXPECT_EQ(syslibc_strlen(p), 10UL);
 	free(p);
 }
+
+TEST(String, Strnlen)
+{
+	const char* s1 = "machine";
+	const char* s2 = "iama\0machine";
+	size_t x = syslibc_strnlen(s1, 5);
+	EXPECT_EQ(x, 5);
+	x = syslibc_strnlen(s2, 10);
+	EXPECT_EQ(x, 4);
+}
