@@ -1,6 +1,7 @@
 atoi syslibc_atoi
 free syslibc_free
 malloc syslibc_malloc
+memchr syslibc_memchr
 memcmp syslibc_memcmp
 memcpy syslibc_memcpy
 memmove syslibc_memmove
@@ -14,5 +15,6 @@ strcpy syslibc_strcpy
 strlen syslibc_strlen
 strncmp syslibc_strncmp
 strncpy syslibc_strncpy
+strnlen syslibc_strnlen
 tolower syslibc_tolower
 toupper syslibc_toupper
