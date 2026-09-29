@@ -7,6 +7,7 @@ extern "C" {
 
 #include "syslibc_stddef.h"
 
+void* syslibc_memchr(const void* s, int c, size_t n);
 int syslibc_memcmp(const void* s1, const void* s2, size_t n);
 void* syslibc_memcpy(void* dest, const void* src, size_t n);
 void* syslibc_memmove(void* dest, const void* src, size_t n);

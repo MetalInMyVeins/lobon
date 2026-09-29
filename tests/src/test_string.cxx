@@ -1,8 +1,17 @@
 #include <gtest/gtest.h>
-#include <cstdlib>
-#include <cstring>
+#include <stdlib.h>
+#include <string.h>
 
 #include "syslibc_string.h"
+
+TEST(String, Memchr)
+{
+	const char* s = "iamamachine";
+	const char* t = (const char*)memchr(s, 'h', 11);
+	EXPECT_EQ(*t, 'h');
+	const void* u = syslibc_memchr(s, 'x', 11);
+	EXPECT_EQ(u, nullptr);
+}
 
 TEST(String, Memcmp)
 {
