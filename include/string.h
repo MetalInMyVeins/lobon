@@ -7,6 +7,7 @@ extern "C" {
 
 #include "stddef.h"
 
+void* memchr(const void* s, int c, size_t n);
 int memcmp(const void* restrict s1, const void* restrict s2, size_t n);
 void* memcpy(void* restrict dest, const void* restrict src, size_t n);
 void* memmove(void* dest, const void* src, size_t n);
