@@ -1,7 +1,7 @@
-CC := clang
-CXX := clang++
-LD := ld.lld
-AR := llvm-ar
+CC ?= clang
+CXX ?= clang++
+LD ?= ld.lld
+AR ?= llvm-ar
 ASM := nasm
 STRIP := strip
 OBJCOPY := objcopy
