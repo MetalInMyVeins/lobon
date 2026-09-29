@@ -14,6 +14,7 @@ __strcpy:
 
 	mov	rdi, rsi
 	call	__strlen
+	inc	rax
 
 	mov	rdx, rax
 	mov	rdi, [rbp - 8]

@@ -97,6 +97,10 @@ TEST(String, Strcpy)
 {
 	const char* s1 = "asdfghij";
 	char* s2 = (char*)malloc(15);
+	for (size_t i = 0; i < 15; ++i)
+	{
+		s2[i] = 1;
+	}
 	const char* t = syslibc_strcpy(s2, s1);
 	EXPECT_EQ(t[0], 'a');
 	EXPECT_EQ(t[1], 's');
