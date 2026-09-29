@@ -40,7 +40,7 @@ Minimal libc implementation in assembly using linux syscalls.
 - [ ] strncmp
 - [ ] strncpy
 - [X] tolower
-- [ ] toupper
+- [X] toupper
 
 # LLM Ban
 
