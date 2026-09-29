@@ -1,7 +1,5 @@
 # syslibc
 
-![CI](https://github.com/MetalInMyVeins/syslibc/actions/workflows/ci.yml/badge.svg)
-
 Minimal libc implementation in assembly using linux syscalls.
 
 # Target Architecture
