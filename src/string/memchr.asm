@@ -3,9 +3,6 @@ global __memchr:function hidden
 
 memchr:
 __memchr:
-	push	rbp
-	mov	rbp, rsp
-
 	xor	r10d, r10d
 
 .loop:
@@ -26,5 +23,4 @@ __memchr:
 	xor	eax, eax
 
 .end:
-	leave
 	ret

@@ -8,9 +8,6 @@ global __memmove:function hidden
 ; If dest < src, the copy loop should go forward.
 memmove:
 __memmove:
-	push	rbp
-	mov	rbp, rsp
-
 	mov	rax, rdi
 
 	xor	r10d, r10d
@@ -44,5 +41,4 @@ __memmove:
 	jmp	.loop2
 
 .end:
-	leave
 	ret

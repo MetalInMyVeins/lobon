@@ -3,9 +3,6 @@ global __memcpy:function hidden
 
 memcpy:
 __memcpy:
-	push	rbp
-	mov	rbp, rsp
-
 	xor	r10d, r10d
 	xor	r8d, r8d
 	mov	rax, rdi
@@ -20,5 +17,4 @@ __memcpy:
 	jmp	.loop
 
 .end:
-	leave
 	ret

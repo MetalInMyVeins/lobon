@@ -3,9 +3,6 @@ global __strlen:function hidden
 
 strlen:
 __strlen:
-	push	rbp
-	mov	rbp, rsp
-
 	mov	sil, byte [rdi]
 	xor	eax, eax
 
@@ -18,5 +15,4 @@ __strlen:
 	jmp	.loop
 
 .end:
-	leave
 	ret

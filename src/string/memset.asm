@@ -3,9 +3,6 @@ global __memset:function hidden
 
 memset:
 __memset:
-	push	rbp
-	mov	rbp, rsp
-
 	xor	r10d, r10d
 	mov	rax, rdi
 
@@ -18,5 +15,4 @@ __memset:
 	jmp	.loop
 
 .end:
-	leave
 	ret

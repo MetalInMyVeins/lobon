@@ -3,10 +3,6 @@ global __memcmp:function hidden
 
 memcmp:
 __memcmp:
-
-	push	rbp
-	mov	rbp, rsp
-
 	xor	eax, eax
 	cmp	rdx, 0
 	je	.end
@@ -29,5 +25,4 @@ __memcmp:
 	movsx	eax, r8b
 
 .end:
-	leave
 	ret
