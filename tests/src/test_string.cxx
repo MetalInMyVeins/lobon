@@ -6,8 +6,8 @@
 
 TEST(String, Memcmp)
 {
-	const char* s1 = "app";
-	const char* s2 = "aapkl";
+	const char* s1 = "applicate";
+	const char* s2 = "application";
 	int x = memcmp(s1, s2, 3);
 	int y = syslibc_memcmp(s1, s2, 3);
 	EXPECT_EQ(x, y);
