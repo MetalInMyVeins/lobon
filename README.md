@@ -49,4 +49,4 @@ Minimal libc implementation in assembly using linux syscalls.
 
 # LLM Ban
 
-LLMs are completely banned from the project.
+This is a personal educational project. It makes absolutely zero sense to use an LLM to generate code in an educational project while the sole purpose was to be proficient in assembly. So every single line is hand-written. LLMs are strictly prohibited.
