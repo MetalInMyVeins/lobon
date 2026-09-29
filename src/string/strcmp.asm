@@ -12,10 +12,12 @@ __strcmp:
 	mov	[rbp - 24], rdi
 	mov	[rbp - 32], rsi
 	call	__strlen
+	inc	rax
 	mov	[rbp - 8], rax
 
 	mov	rdi, [rbp - 32]
 	call	__strlen
+	inc	rax
 	mov	[rbp - 16], rax
 
 	cmp	[rbp - 8], rax

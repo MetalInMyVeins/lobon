@@ -91,6 +91,14 @@ TEST(String, Strcmp)
 	x = strcmp(s2, s1);
 	y = syslibc_strcmp(s2, s1);
 	EXPECT_EQ(x, y);
+	const char* a1 = "abc";
+	const char* a2 = "abcd";
+	x = strcmp(a1, a2);
+	y = syslibc_strcmp(a1, a2);
+	EXPECT_EQ(x, y);
+	x = strcmp(a2, a1);
+	y = syslibc_strcmp(a2, a1);
+	EXPECT_EQ(x, y);
 }
 
 TEST(String, Strcpy)
