@@ -33,14 +33,13 @@ Minimal libc implementation in assembly using linux syscalls.
 - [ ] printf
 - [ ] realloc
 - [ ] scanf
-- [ ] strcasecmp
 - [X] strcat
 - [X] strcmp
 - [X] strcpy
 - [X] strlen
-- [ ] strncasecmp
 - [ ] strncmp
 - [ ] strncpy
+- [ ] tolower
 - [ ] toupper
 
 # LLM Ban
