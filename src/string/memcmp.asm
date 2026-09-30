@@ -21,8 +21,10 @@ __memcmp:
 	jmp	.loop
 
 .calc_diff:
-	sub	r8b, byte [rsi + r10]
-	movsx	eax, r8b
+	movzx	r8d, r8b
+	movzx	r9d, byte [rsi + r10]
+	sub	r8d, r9d
+	mov	eax, r8d
 
 .end:
 	ret
