@@ -21,6 +21,5 @@ __strcpy:
 	mov	rsi, [rbp - 16]
 	call	__memcpy
 
-.end:
 	leave
 	ret

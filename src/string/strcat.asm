@@ -30,6 +30,5 @@ __strcat:
 	call	__memcpy
 	mov	rax, [rbp - 8]
 
-.end:
 	leave
 	ret
