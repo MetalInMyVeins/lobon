@@ -7,8 +7,9 @@ __strlen:
 	xor	eax, eax
 
 .loop:
-	cmp	sil, 0
+	test	sil, sil
 	je	.end
+
 	inc	rax
 	inc	rdi
 	mov	sil, byte [rdi]
