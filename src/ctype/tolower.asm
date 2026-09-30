@@ -3,8 +3,6 @@ global __tolower:function hidden
 
 tolower:
 __tolower:
-	push	rbp
-	mov	rbp, rsp
 	mov	eax, edi
 
 	cmp	edi, 'A'
@@ -15,5 +13,4 @@ __tolower:
 	add	eax, 32
 
 .end:
-	leave
 	ret
