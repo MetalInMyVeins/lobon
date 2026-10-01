@@ -24,6 +24,22 @@ This is a minimal libc implementation in assembly using linux syscalls. It serve
 - `gcc`: 16.2.1
 - `gtest`: 1.18.0
 
+# Build
+
+Build the library:
+
+```
+make lib
+```
+
+Build the library for test files and run the test suite:
+
+```
+make check
+```
+
+Before any of that, make sure the dependencies are installed. See more in [Design Decisions](#design-decisions).
+
 # Functions Checklist
 
 - [ ] atof
@@ -75,6 +91,22 @@ This is a minimal libc implementation in assembly using linux syscalls. It serve
 - [X] tolower
 - [X] toupper
 
+# Design Decisions
+
+Any C program using `syslibc` disabling standard headers, compiler headers, and system libc would be doing this:
+
+```
+   c program
+       |
+       V
+    syslibc
+       |
+       V
+linux syscall abi
+       |
+       V
+  linux kernel
+```
 
 # LLM Ban
 
