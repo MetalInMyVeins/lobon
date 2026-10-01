@@ -47,4 +47,3 @@ strtoul syslibc_strtoul
 strtoull syslibc_strtoull
 tolower syslibc_tolower
 toupper syslibc_toupper
-
