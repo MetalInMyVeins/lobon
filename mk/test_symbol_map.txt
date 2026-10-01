@@ -5,6 +5,18 @@ atoll syslibc_atoll
 bsearch syslibc_bsearch
 calloc syslibc_calloc
 free syslibc_free
+isalnum syslibc_isalnum
+isalpha syslibc_isalpha
+isblank syslibc_isblank
+iscntrl syslibc_iscntrl
+isdigit syslibc_isdigit
+isgraph syslibc_isgraph
+islower syslibc_islower
+isprint syslibc_isprint
+ispunct syslibc_ispunct
+isspace syslibc_isspace
+isupper syslibc_isupper
+isxdigit syslibc_isxdigit
 malloc syslibc_malloc
 memchr syslibc_memchr
 memcmp syslibc_memcmp
@@ -35,3 +47,4 @@ strtoul syslibc_strtoul
 strtoull syslibc_strtoull
 tolower syslibc_tolower
 toupper syslibc_toupper
+

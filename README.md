@@ -33,6 +33,18 @@ Minimal libc implementation in assembly using linux syscalls.
 - [ ] bsearch
 - [ ] calloc
 - [ ] free
+- [ ] isalnum
+- [ ] isalpha
+- [ ] isblank
+- [ ] iscntrl
+- [ ] isdigit
+- [ ] isgraph
+- [ ] islower
+- [ ] isprint
+- [ ] ispunct
+- [ ] isspace
+- [ ] isupper
+- [ ] isxdigit
 - [ ] malloc
 - [X] memchr
 - [X] memcmp
@@ -62,6 +74,7 @@ Minimal libc implementation in assembly using linux syscalls.
 - [ ] strtoull
 - [X] tolower
 - [X] toupper
+
 
 # LLM Ban
 
