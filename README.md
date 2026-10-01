@@ -26,7 +26,11 @@ Minimal libc implementation in assembly using linux syscalls.
 
 # Supported Functions
 
+- [ ] atof
 - [ ] atoi
+- [ ] atol
+- [ ] atoll
+- [ ] bsearch
 - [ ] calloc
 - [ ] free
 - [ ] malloc
@@ -36,16 +40,28 @@ Minimal libc implementation in assembly using linux syscalls.
 - [X] memmove
 - [X] memset
 - [ ] printf
+- [ ] qsort
 - [ ] realloc
 - [ ] reallocarray
 - [ ] scanf
 - [X] strcat
+- [ ] strchr
 - [X] strcmp
 - [X] strcpy
+- [ ] strcspn
 - [X] strlen
 - [ ] strncmp
 - [ ] strncpy
 - [X] strnlen
+- [ ] strpbrk
+- [ ] strrchr
+- [ ] strspn
+- [ ] strstr
+- [ ] strtok
+- [ ] strtol
+- [ ] strtoll
+- [ ] strtoul
+- [ ] strtoull
 - [X] tolower
 - [X] toupper
 
