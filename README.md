@@ -3,7 +3,7 @@
 [![syslibc](https://github.com/MetalInMyVeins/syslibc/actions/workflows/syslibc.yaml/badge.svg)](https://github.com/MetalInMyVeins/syslibc/actions/workflows/syslibc.yaml)
 [![tests](https://github.com/MetalInMyVeins/syslibc/actions/workflows/tests.yaml/badge.svg)](https://github.com/MetalInMyVeins/syslibc/actions/workflows/tests.yaml)
 
-Minimal libc implementation in assembly using linux syscalls.
+This is a minimal libc implementation in assembly using linux syscalls. It serves as an educational project with the sole purpose of getting good at assembly. The implementation currently avoids any advanced optimization techniques and the functions are directly from ISO C standard. Non-standard functions purely from POSIX/GNU/BSD are not currently included.
 
 # Target Architecture + Platform
 
@@ -78,4 +78,4 @@ Minimal libc implementation in assembly using linux syscalls.
 
 # LLM Ban
 
-This is a personal educational project. It makes absolutely zero sense to use generative AI in an educational project while the sole purpose is to be proficient in assembly, which needs significant mental gymnastics. So every single line is hand-written. LLMs are strictly prohibited.
+As a personal educational project, it makes absolutely zero sense to use generative AI. Writing assembly requires significant mental gymnastics unlike high level languages. So every single line is hand-written. LLMs are strictly prohibited.
