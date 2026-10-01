@@ -24,7 +24,6 @@ strcspn syslibc_strcspn
 strlen syslibc_strlen
 strncmp syslibc_strncmp
 strncpy syslibc_strncpy
-strnlen syslibc_strnlen
 strpbrk syslibc_strpbrk
 strrchr syslibc_strrchr
 strspn syslibc_strspn

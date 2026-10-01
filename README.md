@@ -42,7 +42,6 @@ Minimal libc implementation in assembly using linux syscalls.
 - [ ] printf
 - [ ] qsort
 - [ ] realloc
-- [ ] reallocarray
 - [ ] scanf
 - [X] strcat
 - [ ] strchr
@@ -52,7 +51,6 @@ Minimal libc implementation in assembly using linux syscalls.
 - [X] strlen
 - [ ] strncmp
 - [ ] strncpy
-- [X] strnlen
 - [ ] strpbrk
 - [ ] strrchr
 - [ ] strspn
