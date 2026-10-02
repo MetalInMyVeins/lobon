@@ -142,3 +142,36 @@ TEST(String, Strlen)
 	EXPECT_EQ(syslibc_strlen(p), 10UL);
 	free(p);
 }
+
+TEST(String, Strncmp)
+{
+	const char* s1 = "iamamachine";
+	const char* s2 = "iamamachinary";
+	int a1 = strncmp(s1, s2, strlen(s1) + 1);
+	int b1 = strncmp(s1, s2, strlen(s2) + 1);
+	int c1 = strncmp(s2, s1, strlen(s1) + 1);
+	int d1 = strncmp(s2, s1, strlen(s2) + 1);
+	int a2 = syslibc_strncmp(s1, s2, syslibc_strlen(s1) + 1);
+	int b2 = syslibc_strncmp(s1, s2, syslibc_strlen(s2) + 1);
+	int c2 = syslibc_strncmp(s2, s1, syslibc_strlen(s1) + 1);
+	int d2 = syslibc_strncmp(s2, s1, syslibc_strlen(s2) + 1);
+	EXPECT_EQ(a1, a2);
+	EXPECT_EQ(b1, b2);
+	EXPECT_EQ(c1, c2);
+	EXPECT_EQ(d1, d2);
+	
+	const char* s11 = "iama\0machine";
+	const char* s22 = "iamamac\0hinary";
+	a1 = strncmp(s11, s22, strlen(s11) + 1);
+	b1 = strncmp(s11, s22, strlen(s22) + 1);
+	c1 = strncmp(s22, s11, strlen(s11) + 1);
+	d1 = strncmp(s22, s11, strlen(s22) + 1);
+	a2 = syslibc_strncmp(s11, s22, syslibc_strlen(s11) + 1);
+	b2 = syslibc_strncmp(s11, s22, syslibc_strlen(s22) + 1);
+	c2 = syslibc_strncmp(s22, s11, syslibc_strlen(s11) + 1);
+	d2 = syslibc_strncmp(s22, s11, syslibc_strlen(s22) + 1);
+	EXPECT_EQ(a1, a2);
+	EXPECT_EQ(b1, b2);
+	EXPECT_EQ(c1, c2);
+	EXPECT_EQ(d1, d2);
+}

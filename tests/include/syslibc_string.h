@@ -16,6 +16,7 @@ char* syslibc_strcat(char* dst, const char* src);
 int syslibc_strcmp(const char* s1, const char* s2);
 char* syslibc_strcpy(char* dst, const char* src);
 size_t syslibc_strlen(const char* s);
+int syslibc_strncmp(const char* s1, const char* s2, size_t n);
 
 #ifdef __cplusplus
 }
