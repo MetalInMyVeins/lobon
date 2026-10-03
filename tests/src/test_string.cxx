@@ -159,7 +159,7 @@ TEST(String, Strncmp)
 	EXPECT_EQ(b1, b2);
 	EXPECT_EQ(c1, c2);
 	EXPECT_EQ(d1, d2);
-	
+
 	const char* s11 = "iama\0machine";
 	const char* s22 = "iamamac\0hinary";
 	a1 = strncmp(s11, s22, strlen(s11) + 1);
@@ -170,6 +170,21 @@ TEST(String, Strncmp)
 	b2 = lobon_strncmp(s11, s22, lobon_strlen(s22) + 1);
 	c2 = lobon_strncmp(s22, s11, lobon_strlen(s11) + 1);
 	d2 = lobon_strncmp(s22, s11, lobon_strlen(s22) + 1);
+	EXPECT_EQ(a1, a2);
+	EXPECT_EQ(b1, b2);
+	EXPECT_EQ(c1, c2);
+	EXPECT_EQ(d1, d2);
+
+	const char* s111 = "abcdef";
+	const char* s222 = "abc";
+	a1 = strncmp(s111, s222, strlen(s111) + 1);
+	b1 = strncmp(s111, s222, strlen(s222) + 1);
+	c1 = strncmp(s222, s111, strlen(s111) + 1);
+	d1 = strncmp(s222, s111, strlen(s222) + 1);
+	a2 = lobon_strncmp(s111, s222, lobon_strlen(s111) + 1);
+	b2 = lobon_strncmp(s111, s222, lobon_strlen(s222) + 1);
+	c2 = lobon_strncmp(s222, s111, lobon_strlen(s111) + 1);
+	d2 = lobon_strncmp(s222, s111, lobon_strlen(s222) + 1);
 	EXPECT_EQ(a1, a2);
 	EXPECT_EQ(b1, b2);
 	EXPECT_EQ(c1, c2);
