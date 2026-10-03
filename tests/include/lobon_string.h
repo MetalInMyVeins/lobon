@@ -8,16 +8,16 @@ extern "C" {
 #include "lobon_stddef.h"
 
 void* lobon_memchr(const void* s, int c, size_t n);
-int lobon_memcmp(const void* s1, const void* s2, size_t n);
-void* lobon_memcpy(void* dest, const void* src, size_t n);
+int lobon_memcmp(const void* __restrict s1, const void* __restrict s2, size_t n);
+void* lobon_memcpy(void* __restrict dest, const void* __restrict src, size_t n);
 void* lobon_memmove(void* dest, const void* src, size_t n);
 void* lobon_memset(void* a, int c, size_t n);
-char* lobon_strcat(char* dst, const char* src);
+char* lobon_strcat(char* __restrict dst, const char* __restrict src);
 int lobon_strcmp(const char* s1, const char* s2);
-char* lobon_strcpy(char* dst, const char* src);
+char* lobon_strcpy(char* __restrict dst, const char* __restrict src);
 size_t lobon_strlen(const char* s);
 int lobon_strncmp(const char* s1, const char* s2, size_t n);
-char* lobon_strncpy(const char* dst, const char* src, size_t dsize);
+char* lobon_strncpy(const char* __restrict dst, const char* __restrict src, size_t dsize);
 
 #ifdef __cplusplus
 }
