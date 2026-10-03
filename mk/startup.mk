@@ -1,5 +1,5 @@
-CRT_DEB := $(BUILD)/startup/x86_64/syslibcrt_deb.o
-CRT_REL := $(BUILD)/startup/x86_64/syslibcrt.o
+CRT_DEB := $(BUILD)/startup/x86_64/crt_deb.o
+CRT_REL := $(BUILD)/startup/x86_64/crt.o
 
 $(CRT_DEB): src/startup/x86_64/start.asm
 	@mkdir -p $(@D)

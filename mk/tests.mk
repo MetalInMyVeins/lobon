@@ -10,7 +10,7 @@ $(BUILD)/lib_test/%.o: src/%.asm
 
 -include $(LIB_OBJS_TEST:.o=.d)
 
-LIB_A_TEST := $(BUILD)/lib/libsyslibc_test.a
+LIB_A_TEST := $(BUILD)/lib/liblobon_test.a
 
 $(LIB_A_TEST): $(LIB_OBJS_TEST)
 	@mkdir -p $(@D)

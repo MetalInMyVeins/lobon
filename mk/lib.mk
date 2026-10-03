@@ -12,10 +12,10 @@ $(BUILD)/lib_rel/%.o: src/%.asm
 	$(ASM) $(AFLAGS_REL) -MD $(@:.o=.d) -MP $< -o $@
 	$(STRIP) --strip-debug $@
 
-LIB_A_DEB  := $(BUILD)/lib/libsyslibc_deb.a
-LIB_SO_DEB := $(BUILD)/lib/libsyslibc_deb.so
-LIB_A_REL  := $(BUILD)/lib/libsyslibc.a
-LIB_SO_REL := $(BUILD)/lib/libsyslibc.so
+LIB_A_DEB  := $(BUILD)/lib/liblobon_deb.a
+LIB_SO_DEB := $(BUILD)/lib/liblobon_deb.so
+LIB_A_REL  := $(BUILD)/lib/liblobon.a
+LIB_SO_REL := $(BUILD)/lib/liblobon.so
 
 $(LIB_A_DEB): $(LIB_OBJS_DEB)
 	@mkdir -p $(@D)

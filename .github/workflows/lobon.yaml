@@ -1,4 +1,4 @@
-name: syslibc
+name: lobon
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - 'mk/**'
       - 'src/**'
       - 'Makefile'
-      - '.github/workflows/syslibc.yaml'
+      - '.github/workflows/lobon.yaml'
   pull_request:
     branches: [ main ]
 
