@@ -175,3 +175,28 @@ TEST(String, Strncmp)
 	EXPECT_EQ(c1, c2);
 	EXPECT_EQ(d1, d2);
 }
+
+TEST(String, Strncpy)
+{
+	char dest[10];
+	for (int i = 0; i < 10; ++i)
+	{
+		dest[i] = 1;
+	}
+	const char* s1 = "hi";
+	const char* a = lobon_strncpy(dest, s1, 5);
+	EXPECT_EQ(a[0], 'h');
+	EXPECT_EQ(a[1], 'i');
+	EXPECT_EQ(a[2], '\0');
+	EXPECT_EQ(a[3], '\0');
+	EXPECT_EQ(a[4], '\0');
+	EXPECT_EQ(a[5], 1);
+	EXPECT_EQ(a[6], 1);
+	EXPECT_EQ(a[7], 1);
+	EXPECT_EQ(a[8], 1);
+	EXPECT_EQ(a[9], 1);
+
+	const char* s2 = "longtextsizemorethan10";
+	const char* b = lobon_strncpy(dest, s2, 10);
+	EXPECT_STREQ(b, "longtextsi");
+}
