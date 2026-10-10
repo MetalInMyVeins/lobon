@@ -3,6 +3,18 @@
 #include "lobon_ctype.h"
 #include "lobon_string.h"
 
+TEST(Ctype, Isdigit)
+{
+	const char* s = "0123456789abcd";
+	for (size_t i = 0; i < lobon_strlen(s); ++i)
+	{
+		if (i <= 9)
+			EXPECT_EQ(lobon_isdigit(s[i]), true);
+		else
+			EXPECT_EQ(lobon_isdigit(s[i]), false);
+	}
+}
+
 TEST(Ctype, Tolower)
 {
 	const char* s1 = "MACHINE";
