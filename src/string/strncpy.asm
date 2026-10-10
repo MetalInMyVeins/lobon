@@ -39,7 +39,7 @@ __strncpy:
 	cmp	r10, [rbp - 24]
 	je	.end
 
-	mov	[rdi + r10], 0
+	mov	byte [rdi + r10], 0
 	inc	r10
 	jmp	.loop
 
