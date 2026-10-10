@@ -17,6 +17,7 @@ int strcmp(const char* s1, const char* s2);
 char* strcpy(char* restrict dst, const char* restrict src);
 size_t strlen(const char* s);
 int strncmp(const char* s1, const char* s2, size_t n);
+char* strncpy(const char* restrict dst, const char* restrict src, size_t dsize);
 
 #ifdef __cplusplus
 }
