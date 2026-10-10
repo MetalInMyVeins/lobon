@@ -78,7 +78,7 @@ Before any of that, make sure the dependencies are installed. See more in [Desig
 - [ ] strcspn
 - [X] strlen
 - [X] strncmp [thorough test needed]
-- [ ] strncpy
+- [X] strncpy
 - [ ] strpbrk
 - [ ] strrchr
 - [ ] strspn
