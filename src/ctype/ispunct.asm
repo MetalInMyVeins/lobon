@@ -11,17 +11,19 @@ __ispunct:
 
 	mov	[rbp - 4], edi
 	call	__isspace
-	not	eax
-	mov	[rbp - 8], eax
+	cmp	eax, 0
+	jg	.false
 
 	mov	edi, [rbp - 4]
 	call	__isalnum
-	not	eax
-
-	and	eax, [rbp - 8]
 	cmp	eax, 0
-	je	.end
+	jg	.false
+
 	mov	eax, 1
+	jmp	.end
+
+.false:
+	xor	eax, eax
 
 .end:
 	leave
