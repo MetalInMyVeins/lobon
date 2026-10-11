@@ -34,6 +34,7 @@ strcmp lobon_strcmp
 strcpy lobon_strcpy
 strcspn lobon_strcspn
 strlen lobon_strlen
+strncat lobon_strncat
 strncmp lobon_strncmp
 strncpy lobon_strncpy
 strpbrk lobon_strpbrk
