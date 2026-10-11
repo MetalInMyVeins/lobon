@@ -64,6 +64,22 @@ TEST(Ctype, Islower)
 	EXPECT_EQ(lobon_islower(s[10]), false);
 }
 
+TEST(Ctype, Ispnuct)
+{
+	const char* s = "!@#$%QWer(),.";
+	EXPECT_EQ(lobon_ispunct(s[0]), true);
+	EXPECT_EQ(lobon_ispunct(s[1]), true);
+	EXPECT_EQ(lobon_ispunct(s[2]), true);
+	EXPECT_EQ(lobon_ispunct(s[3]), true);
+	EXPECT_EQ(lobon_ispunct(s[4]), true);
+	EXPECT_EQ(lobon_ispunct(s[5]), false);
+	EXPECT_EQ(lobon_ispunct(s[6]), false);
+	EXPECT_EQ(lobon_ispunct(s[7]), false);
+	EXPECT_EQ(lobon_ispunct(s[8]), false);
+	EXPECT_EQ(lobon_ispunct(s[9]), true);
+	EXPECT_EQ(lobon_ispunct(s[10]), true);
+}
+
 TEST(Ctype, Isupper)
 {
 	const char* s = "01#asdfAFZ0";
