@@ -24,4 +24,5 @@ __isalpha:
 	xor	eax, eax
 
 .end:
+	leave
 	ret

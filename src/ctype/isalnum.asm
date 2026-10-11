@@ -26,4 +26,5 @@ __isalnum:
 	mov	eax, 1
 
 .end:
+	leave
 	ret

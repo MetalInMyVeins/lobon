@@ -24,4 +24,5 @@ __ispunct:
 	mov	eax, 1
 
 .end:
+	leave
 	ret
