@@ -96,6 +96,20 @@ TEST(Ctype, Isupper)
 	EXPECT_EQ(lobon_isupper(s[10]), false);
 }
 
+TEST(Ctype, Isxdigit)
+{
+	const char* s = "AFdeG128^";
+	EXPECT_EQ(lobon_isxdigit(s[0]), true);
+	EXPECT_EQ(lobon_isxdigit(s[1]), true);
+	EXPECT_EQ(lobon_isxdigit(s[2]), true);
+	EXPECT_EQ(lobon_isxdigit(s[3]), true);
+	EXPECT_EQ(lobon_isxdigit(s[4]), false);
+	EXPECT_EQ(lobon_isxdigit(s[5]), true);
+	EXPECT_EQ(lobon_isxdigit(s[6]), true);
+	EXPECT_EQ(lobon_isxdigit(s[7]), true);
+	EXPECT_EQ(lobon_isxdigit(s[8]), false);
+}
+
 TEST(Ctype, Tolower)
 {
 	const char* s1 = "MACHINE";
