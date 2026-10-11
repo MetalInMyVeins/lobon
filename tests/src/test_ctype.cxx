@@ -64,7 +64,7 @@ TEST(Ctype, Islower)
 	EXPECT_EQ(lobon_islower(s[10]), false);
 }
 
-TEST(Ctype, Ispnuct)
+TEST(Ctype, Ispunct)
 {
 	const char* s = "!@#$%QWer(),.";
 	EXPECT_EQ(lobon_ispunct(s[0]), true);
