@@ -3,6 +3,17 @@
 #include "lobon_ctype.h"
 #include "lobon_string.h"
 
+TEST(Ctype, Isalpha)
+{
+	const char* s = "asDF#$";
+	EXPECT_EQ(lobon_isalpha(s[0]), true);
+	EXPECT_EQ(lobon_isalpha(s[1]), true);
+	EXPECT_EQ(lobon_isalpha(s[2]), true);
+	EXPECT_EQ(lobon_isalpha(s[3]), true);
+	EXPECT_EQ(lobon_isalpha(s[4]), false);
+	EXPECT_EQ(lobon_isalpha(s[5]), false);
+}
+
 TEST(Ctype, Isdigit)
 {
 	const char* s = "0123456789abcd";
