@@ -31,6 +31,22 @@ TEST(Ctype, Islower)
 	EXPECT_EQ(lobon_islower(s[10]), false);
 }
 
+TEST(Ctype, Isupper)
+{
+	const char* s = "01#asdfAFZ0";
+	EXPECT_EQ(lobon_isupper(s[0]), false);
+	EXPECT_EQ(lobon_isupper(s[1]), false);
+	EXPECT_EQ(lobon_isupper(s[2]), false);
+	EXPECT_EQ(lobon_isupper(s[3]), false);
+	EXPECT_EQ(lobon_isupper(s[4]), false);
+	EXPECT_EQ(lobon_isupper(s[5]), false);
+	EXPECT_EQ(lobon_isupper(s[6]), false);
+	EXPECT_EQ(lobon_isupper(s[7]), true);
+	EXPECT_EQ(lobon_isupper(s[8]), true);
+	EXPECT_EQ(lobon_isupper(s[9]), true);
+	EXPECT_EQ(lobon_isupper(s[10]), false);
+}
+
 TEST(Ctype, Tolower)
 {
 	const char* s1 = "MACHINE";
