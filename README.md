@@ -3,7 +3,7 @@
 [![lobon](https://github.com/MetalInMyVeins/lobon/actions/workflows/lobon.yaml/badge.svg)](https://github.com/MetalInMyVeins/lobon/actions/workflows/lobon.yaml)
 [![tests](https://github.com/MetalInMyVeins/lobon/actions/workflows/tests.yaml/badge.svg)](https://github.com/MetalInMyVeins/lobon/actions/workflows/tests.yaml)
 
-This is a minimal libc implementation in assembly using linux syscalls. It serves as an educational project with the sole purpose of getting good at assembly. The implementation currently avoids any advanced optimization techniques and the functions are strictly ISO C standard compliant. Non-standard functions purely from POSIX/GNU/BSD are currently not included.
+This is a minimal libc implementation in assembly using linux syscalls. It serves as an educational project with the sole purpose of getting good at assembly. The implementation currently avoids any advanced optimization techniques and the functions are strictly ISO C standard compliant. Non-standard functions purely from POSIX/GNU/BSD are currently not included. `lobon` aims to be C23 conforming. But as the project is in its early stage, this might not be strictly possible for now.
 
 # Target Architecture + Platform
 
