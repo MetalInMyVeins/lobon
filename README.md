@@ -82,7 +82,7 @@ Before any of that, make sure the dependencies are installed. See more in [Desig
 - [X] strncmp [thorough test needed]
 - [X] strncpy
 - [ ] strpbrk
-- [ ] strrchr
+- [X] strrchr
 - [ ] strspn
 - [ ] strstr
 - [ ] strtok
