@@ -15,6 +15,22 @@ TEST(Ctype, Isdigit)
 	}
 }
 
+TEST(Ctype, Islower)
+{
+	const char* s = "01#asdfAiZ0";
+	EXPECT_EQ(lobon_islower(s[0]), false);
+	EXPECT_EQ(lobon_islower(s[1]), false);
+	EXPECT_EQ(lobon_islower(s[2]), false);
+	EXPECT_EQ(lobon_islower(s[3]), true);
+	EXPECT_EQ(lobon_islower(s[4]), true);
+	EXPECT_EQ(lobon_islower(s[5]), true);
+	EXPECT_EQ(lobon_islower(s[6]), true);
+	EXPECT_EQ(lobon_islower(s[7]), false);
+	EXPECT_EQ(lobon_islower(s[8]), true);
+	EXPECT_EQ(lobon_islower(s[9]), false);
+	EXPECT_EQ(lobon_islower(s[10]), false);
+}
+
 TEST(Ctype, Tolower)
 {
 	const char* s1 = "MACHINE";
