@@ -27,6 +27,15 @@ TEST(Ctype, Isalpha)
 	EXPECT_EQ(lobon_isalpha(s[5]), false);
 }
 
+TEST(Ctype, Isblank)
+{
+	const char* s = " \t @";
+	EXPECT_EQ(lobon_isblank(s[0]), true);
+	EXPECT_EQ(lobon_isblank(s[1]), true);
+	EXPECT_EQ(lobon_isblank(s[2]), true);
+	EXPECT_EQ(lobon_isblank(s[3]), false);
+}
+
 TEST(Ctype, Isdigit)
 {
 	const char* s = "0123456789abcd";
