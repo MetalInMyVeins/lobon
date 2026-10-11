@@ -226,3 +226,14 @@ TEST(String, Strncpy)
 	const char* b = lobon_strncpy(dest, s2, 10);
 	EXPECT_STREQ(b, "longtextsi");
 }
+
+TEST(String, Strrchr)
+{
+	const char* s = "asdfghghfasd";
+	const char* t1 = lobon_strrchr(s, 'f');
+	const char* t2 = lobon_strrchr(s, 'a');
+	const char* t3 = lobon_strrchr(s, 'x');
+	EXPECT_STREQ(t1, "fasd");
+	EXPECT_STREQ(t2, "asd");
+	EXPECT_STREQ(t3, nullptr);
+}
