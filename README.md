@@ -74,9 +74,11 @@ Before any of that, make sure the dependencies are installed. See more in [Desig
 - [X] strcat
 - [ ] strchr
 - [X] strcmp
+- [ ] strcoll
 - [X] strcpy
 - [ ] strcspn
 - [X] strlen
+- [ ] strncat
 - [X] strncmp [thorough test needed]
 - [X] strncpy
 - [ ] strpbrk
@@ -88,6 +90,7 @@ Before any of that, make sure the dependencies are installed. See more in [Desig
 - [ ] strtoll
 - [ ] strtoul
 - [ ] strtoull
+- [ ] strxfrm
 - [X] tolower
 - [X] toupper
 
