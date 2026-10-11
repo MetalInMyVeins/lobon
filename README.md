@@ -72,7 +72,7 @@ Before any of that, make sure the dependencies are installed. See more in [Desig
 - [ ] realloc
 - [ ] scanf
 - [X] strcat
-- [ ] strchr
+- [X] strchr
 - [X] strcmp
 - [ ] strcoll
 - [X] strcpy
