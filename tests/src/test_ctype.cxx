@@ -3,6 +3,19 @@
 #include "lobon_ctype.h"
 #include "lobon_string.h"
 
+TEST(Ctype, Isalnum)
+{
+	const char* s = "asDF12#$";
+	EXPECT_EQ(lobon_isalnum(s[0]), true);
+	EXPECT_EQ(lobon_isalnum(s[1]), true);
+	EXPECT_EQ(lobon_isalnum(s[2]), true);
+	EXPECT_EQ(lobon_isalnum(s[3]), true);
+	EXPECT_EQ(lobon_isalnum(s[4]), true);
+	EXPECT_EQ(lobon_isalnum(s[5]), true);
+	EXPECT_EQ(lobon_isalnum(s[6]), false);
+	EXPECT_EQ(lobon_isalnum(s[7]), false);
+}
+
 TEST(Ctype, Isalpha)
 {
 	const char* s = "asDF#$";
