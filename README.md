@@ -49,18 +49,18 @@ Before any of that, make sure the dependencies are installed. See more in [Desig
 - [ ] bsearch
 - [ ] calloc
 - [ ] free
-- [ ] isalnum
-- [ ] isalpha
-- [ ] isblank
-- [ ] iscntrl
-- [ ] isdigit
-- [ ] isgraph
-- [ ] islower
-- [ ] isprint
-- [ ] ispunct
-- [ ] isspace
-- [ ] isupper
-- [ ] isxdigit
+- [X] isalnum
+- [X] isalpha
+- [X] isblank
+- [X] iscntrl
+- [X] isdigit
+- [X] isgraph
+- [X] islower
+- [X] isprint
+- [X] ispunct
+- [X] isspace
+- [X] isupper
+- [X] isxdigit
 - [ ] malloc
 - [X] memchr
 - [X] memcmp
