@@ -13,6 +13,7 @@ void* lobon_memcpy(void* __restrict dest, const void* __restrict src, size_t n);
 void* lobon_memmove(void* dest, const void* src, size_t n);
 void* lobon_memset(void* a, int c, size_t n);
 char* lobon_strcat(char* __restrict dst, const char* __restrict src);
+char* lobon_strchr(const char* s, int c);
 int lobon_strcmp(const char* s1, const char* s2);
 char* lobon_strcpy(char* __restrict dst, const char* __restrict src);
 size_t lobon_strlen(const char* s);
