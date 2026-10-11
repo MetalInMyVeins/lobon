@@ -10,6 +10,7 @@ CFLAGS := \
 	-g \
 	-std=c23 \
 	-Wall -Wextra -Werror \
+	-Wno-unused-variable \
 	-ffreestanding \
 	-fno-builtin \
 	-nostdinc \
