@@ -83,12 +83,12 @@ TEST(String, Strcat)
 
 TEST(String, Strchr)
 {
-	const char* s = "asdfgh";
-	const char* t1 = lobon_strchr(s, 'f');
-	const char* t2 = lobon_strchr(s, 'a');
-	const char* t3 = lobon_strchr(s, 'x');
-	EXPECT_STREQ(t1, "fgh");
-	EXPECT_STREQ(t2, "asdfgh");
+	const char* s = "asdfghghfasd";
+	const char* t1 = strchr(s, 'f');
+	const char* t2 = strchr(s, 'a');
+	const char* t3 = strchr(s, 'x');
+	EXPECT_STREQ(t1, "fghghfasd");
+	EXPECT_STREQ(t2, "asdfghghfasd");
 	EXPECT_STREQ(t3, nullptr);
 }
 
