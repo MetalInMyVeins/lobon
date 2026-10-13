@@ -154,6 +154,22 @@ TEST(String, Strlen)
 	free(p);
 }
 
+TEST(String, Strncat)
+{
+	char s1[10] = "asd";
+	const char* s2 = "qwerty";
+	const char* t1 = lobon_strncat(s1, s2, lobon_strlen(s2));
+	EXPECT_STREQ(t1, "asdqwerty");
+	char s11[10] = "asd";
+	const char* s22 = "qwerty";
+	const char* t11 = lobon_strncat(s11, s22, 3);
+	EXPECT_STREQ(t11, "asdqwe");
+	char s111[10] = "asdfg";
+	const char* s222 = "qwer\0tyuio";
+	const char* t111 = lobon_strncat(s111, s222, lobon_strlen(s222));
+	EXPECT_STREQ(t111, "asdfgqwer");
+}
+
 TEST(String, Strncmp)
 {
 	const char* s1 = "iamamachine";

@@ -17,6 +17,7 @@ char* lobon_strchr(const char* s, int c);
 int lobon_strcmp(const char* s1, const char* s2);
 char* lobon_strcpy(char* __restrict dst, const char* __restrict src);
 size_t lobon_strlen(const char* s);
+char* lobon_strncat(char* __restrict dst, const char* src, size_t ssize);
 int lobon_strncmp(const char* s1, const char* s2, size_t n);
 char* lobon_strncpy(const char* __restrict dst, const char* __restrict src, size_t dsize);
 char* lobon_strrchr(const char* s, int c);
