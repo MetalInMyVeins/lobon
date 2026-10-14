@@ -157,17 +157,31 @@ TEST(String, Strlen)
 TEST(String, Strncat)
 {
 	char s1[10] = "asd";
+	for (size_t i = 4; i < 10; ++i)
+		s1[i] = 1;
 	const char* s2 = "qwerty";
-	const char* t1 = lobon_strncat(s1, s2, lobon_strlen(s2));
-	EXPECT_STREQ(t1, "asdqwerty");
+	const char* t1 = lobon_strncat(s1, s2, 6);
+	EXPECT_EQ(s1, t1);
+	EXPECT_STREQ(s1, "asdqwerty");
+	EXPECT_EQ(s1[9], '\0');
+
 	char s11[10] = "asd";
+	for (size_t i = 4; i < 10; ++i)
+		s11[i] = 1;
 	const char* s22 = "qwerty";
-	const char* t11 = lobon_strncat(s11, s22, 3);
-	EXPECT_STREQ(t11, "asdqwe");
-	char s111[10] = "asdfg";
+	const char* t11 = lobon_strncat(s11, s22, 7);
+	EXPECT_EQ(s11, t11);
+	EXPECT_STREQ(s11, "asdqwerty");
+	EXPECT_EQ(s11[9], '\0');
+
+	char s111[20] = "asd";
+	for (size_t i = 4; i < 20; ++i)
+		s111[i] = 1;
 	const char* s222 = "qwer\0tyuio";
-	const char* t111 = lobon_strncat(s111, s222, lobon_strlen(s222));
-	EXPECT_STREQ(t111, "asdfgqwer");
+	const char* t111 = lobon_strncat(s111, s222, 10);
+	EXPECT_EQ(s111, t111);
+	EXPECT_STREQ(s111, "asdqwer");
+	EXPECT_EQ(s111[7], '\0');
 }
 
 TEST(String, Strncmp)
