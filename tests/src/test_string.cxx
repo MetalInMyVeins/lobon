@@ -182,6 +182,15 @@ TEST(String, Strncat)
 	EXPECT_EQ(s111, t111);
 	EXPECT_STREQ(s111, "asdqwer");
 	EXPECT_EQ(s111[7], '\0');
+
+	char s1111[20] = "asd";
+	for (size_t i = 4; i < 20; ++i)
+		s1111[i] = 1;
+	const char* s2222 = "qwertyuio";
+	const char* t1111 = lobon_strncat(s1111, s2222, 8);
+	EXPECT_EQ(s1111, t1111);
+	EXPECT_STREQ(s1111, "asdqwertyui");
+	EXPECT_EQ(s1111[11], '\0');
 }
 
 TEST(String, Strncmp)
