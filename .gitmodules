@@ -1,0 +1,3 @@
+[submodule "vendor/sohomot"]
+	path = vendor/sohomot
+	url = https://github.com/MetalInMyVeins/sohomot
