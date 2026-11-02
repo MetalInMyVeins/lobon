@@ -1,4 +1,5 @@
-build/
+/build/
+/scratch/
 .asm-lsp.toml
 .clangd
 .envrc
