@@ -1,0 +1,14 @@
+#undef memchr
+#undef memcmp
+#undef memcpy
+#undef memmove
+#undef memset
+#undef strcat
+#undef strchr
+#undef strcmp
+#undef strcpy
+#undef strlen
+#undef strncat
+#undef strncmp
+#undef strncpy
+#undef strrchr

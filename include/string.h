@@ -19,7 +19,7 @@ char* strcpy(char* restrict dst, const char* restrict src);
 size_t strlen(const char* s);
 char* strncat(char* restrict dst, const char* src, size_t ssize);
 int strncmp(const char* s1, const char* s2, size_t n);
-char* strncpy(const char* restrict dst, const char* restrict src, size_t dsize);
+char* strncpy(char* restrict dst, const char* restrict src, size_t dsize);
 char* strrchr(const char* s, int c);
 
 #ifdef __cplusplus

@@ -56,11 +56,61 @@ $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/%.o: $(SRCDIR)/$(CRTX64DIR)/%.asm
 	$(ASM) $(ASM_FLAGS_DEB) $< -o $@
 
 # pattern match x86_64 crt asm files to .o files.
-SRC_PAT_CRT_X64 := $(patsubst $(SRCDIR)/$(CRTX64DIR)/%.asm, $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/%.o, $(SRC_CRT_X64))
+SRC_CRT_X64_OBJ := $(patsubst $(SRCDIR)/$(CRTX64DIR)/%.asm, $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/%.o, $(SRC_CRT_X64))
 
 .PHONY: debx64
-debx64: $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_SHARED) $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_STATIC) $(SRC_PAT_CRT_X64)
+debx64: $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_SHARED) $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_STATIC) $(SRC_CRT_X64_OBJ)
 	@mkdir -p $(@D)
+
+#################
+# tests portion #
+#################
+.PHONY: sohomot
+sohomot:
+	$(MAKE) -C vendor/sohomot/ rel
+
+SOHOMOT_INCLUDEDIR := vendor/sohomot/include
+SOHOMOT_LIBDIR := vendor/sohomot/build/rel/lib
+SOHOMOT_LIBRARY := sohomot_main
+
+SYMBOL_MAP_FILE := tests/symbol_map.txt
+OBJCOPY := objcopy
+TESTSDIR := tests
+
+LIBC_TEST_SHARED := libc_test.so
+LIBC_TEST_STATIC := libc_test.a
+
+$(BUILDDIR)/$(TESTSDIR)/%.asm.o: $(SRCDIR)/%.asm
+	@mkdir -p $(@D)
+	$(ASM) $(ASM_FLAGS_DEB) $< -o $@.tmp
+	$(OBJCOPY) --redefine-syms=$(SYMBOL_MAP_FILE) $@.tmp $@
+	@rm $@.tmp
+
+SRC_TESTS_X64_OBJ := $(patsubst $(SRCDIR)/%.asm, $(BUILDDIR)/$(TESTSDIR)/%.asm.o, $(SRC_ALL))
+
+$(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_SHARED): $(SRC_TESTS_X64_OBJ)
+	@mkdir -p $(@D)
+	$(LINKER) -shared $^ -o $@
+
+$(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_STATIC): $(SRC_TESTS_X64_OBJ)
+	@mkdir -p $(@D)
+	$(ARCHIVER) rcs $@ $^
+
+TESTS_LIBCDIR := $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)
+TESTS_LIBC := c_test
+TESTS_SRCDIR := $(TESTSDIR)/$(SRCDIR)
+TESTS_INCLUDEDIR := $(TESTSDIR)/$(INCLUDEDIR)
+TESTS_INCLUDE_FLAGS := -iquote $(INCLUDEDIR) -iquote $(TESTS_INCLUDEDIR) -isystem $(SOHOMOT_INCLUDEDIR)
+TESTS_BINARY := test_all
+TESTS_SRC_ALL := $(wildcard $(TESTS_SRCDIR)/*.c)
+
+$(BUILDDIR)/$(TESTSDIR)/$(TESTS_BINARY): $(TESTS_SRC_ALL)
+	clang -std=c23 $^ -o $@ $(TESTS_INCLUDE_FLAGS) \
+		-L$(SOHOMOT_LIBDIR) -l$(SOHOMOT_LIBRARY) -Wl,-rpath=$(SOHOMOT_LIBDIR) \
+		-L$(TESTS_LIBCDIR) -l$(TESTS_LIBC) -Wl,-rpath=$(TESTS_LIBCDIR) \
+
+.PHONY: testx64
+testx64: $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_SHARED) $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_STATIC) $(BUILDDIR)/$(TESTSDIR)/$(TESTS_BINARY)
 
 .PHONY: clean
 clean:

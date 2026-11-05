@@ -1,0 +1,14 @@
+#define isalnum lobon_isalnum
+#define isalpha lobon_isalpha
+#define isblank lobon_isblank
+#define incntrl lobon_iscntrl
+#define isdigit lobon_isdigit
+#define isgraph lobon_isgraph
+#define islower lobon_islower
+#define isprint lobon_isprint
+#define ispunct lobon_ispunct
+#define isspace lobon_isspace
+#define isupper lobon_isupper
+#define isxdigit lobon_isxdigit
+#define tolower lobon_tolower
+#define toupper lobon_toupper

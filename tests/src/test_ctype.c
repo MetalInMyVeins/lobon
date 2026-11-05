@@ -1,7 +1,11 @@
-#include <gtest/gtest.h>
+#include "ctype/defs_ctype.h"
+#include "string/defs_string.h"
+#include "ctype.h"
+#include "string.h"
+#include "ctype/undefs_ctype.h"
+#include "string/undefs_string.h"
 
-#include "lobon_ctype.h"
-#include "lobon_string.h"
+#include "sohomot/sohomot.h"
 
 TEST(Ctype, Isalnum)
 {

@@ -1,0 +1,14 @@
+#define memchr lobon_memchr
+#define memcmp lobon_memcmp
+#define memcpy lobon_memcpy
+#define memmove lobon_memmove
+#define memset lobon_memset
+#define strcat lobon_strcat
+#define strchr lobon_strchr
+#define strcmp lobon_strcmp
+#define strcpy lobon_strcpy
+#define strlen lobon_strlen
+#define strncat lobon_strncat
+#define strncmp lobon_strncmp
+#define strncpy lobon_strncpy
+#define strrchr lobon_strrchr

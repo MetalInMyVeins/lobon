@@ -1,8 +1,10 @@
-#include <gtest/gtest.h>
+#include "string/defs_string.h"
+#include "string.h"
+#include "string/undefs_string.h"
+
+#include "sohomot/sohomot.h"
 #include <stdlib.h>
 #include <string.h>
-
-#include "lobon_string.h"
 
 TEST(String, Memchr)
 {
