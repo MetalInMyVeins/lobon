@@ -36,7 +36,7 @@ Before any of that, make sure the dependencies are installed.
 - `nasm`: assembler
 - `mold` or `lld` or `bfd`: linker
 - `clang` or `gcc`: compiler
-- ![`sohomot`](https://github.com/MetalInMyVeins/sohomot): test suite
+- ![sohomot](https://github.com/MetalInMyVeins/sohomot): test suite
 
 ### Tested Versions of Dependencies:
 
