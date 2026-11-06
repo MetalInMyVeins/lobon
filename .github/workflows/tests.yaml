@@ -24,7 +24,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y build-essential clang lld nasm git
       
       - name: Pull Submodules
-        run: git submdule update --init
+        run: git submodule update --init
 
       - name: Build Test Framework
         run: make sohomot
@@ -32,5 +32,14 @@ jobs:
       - name: Clang Test Build
         run: make testx64 CC=clang LINKER=lld
 
+      - name: Run Clang Tests
+        run: build/tests/test_all
+
+      - name: Clean Build
+        run: make clean
+
       - name: GCC Test Build
         run: make testx64 CC=gcc LINKER=bfd
+
+      - name: Run GCC Tests
+        run: build/tests/test_all
