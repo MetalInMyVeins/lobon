@@ -27,9 +27,9 @@ SRC_ALL := $(wildcard \
 	   $(SRCDIR)/string/*.asm \
 	   )
 
-##################
-# x86_64 portion #
-##################
+##########################
+# library x86_64 portion #
+##########################
 
 CRTX64DIR := crt/$(ARCHX64DIR)
 SRC_CRT_X64 := $(wildcard $(SRCDIR)/$(CRTX64DIR)/*.asm)
@@ -117,23 +117,25 @@ TESTSDIR := tests
 LIBC_TEST_SHARED := libc_test.so
 LIBC_TEST_STATIC := libc_test.a
 
-$(BUILDDIR)/$(TESTSDIR)/%.asm.o: $(SRCDIR)/%.asm
+# x86_64
+
+$(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/%.asm.o: $(SRCDIR)/%.asm
 	@mkdir -p $(@D)
 	$(ASM) $(ASM_FLAGS_DEB) $< -o $@.tmp
 	$(OBJCOPY) --redefine-syms=$(SYMBOL_MAP_FILE) $@.tmp $@
 	@rm $@.tmp
 
-SRC_TESTS_X64_OBJ := $(patsubst $(SRCDIR)/%.asm, $(BUILDDIR)/$(TESTSDIR)/%.asm.o, $(SRC_ALL))
+SRC_TESTS_X64_OBJ := $(patsubst $(SRCDIR)/%.asm, $(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/%.asm.o, $(SRC_ALL))
 
-$(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_SHARED): $(SRC_TESTS_X64_OBJ)
+$(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_TEST_SHARED): $(SRC_TESTS_X64_OBJ)
 	@mkdir -p $(@D)
 	ld.$(LINKER) -shared $^ -o $@
 
-$(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_STATIC): $(SRC_TESTS_X64_OBJ)
+$(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_TEST_STATIC): $(SRC_TESTS_X64_OBJ)
 	@mkdir -p $(@D)
 	$(ARCHIVER) rcs $@ $^
 
-TESTS_LIBCDIR := $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)
+TESTS_LIBCDIR := $(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/$(LIBDIR)
 TESTS_LIBC := c_test
 TESTS_SRCDIR := $(TESTSDIR)/$(SRCDIR)
 TESTS_INCLUDEDIR := $(TESTSDIR)/$(INCLUDEDIR)
@@ -168,14 +170,14 @@ CFLAGS_DEBUG := \
 CFLAGS_LTO := -flto=auto
 LDFLAGS_COMMON := -fuse-ld=$(LINKER)
 
-$(BUILDDIR)/$(TESTSDIR)/$(TESTS_BINARY): $(TESTS_SRC_ALL)
+$(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/$(TESTS_BINARY): $(TESTS_SRC_ALL)
 	$(CC) $(CFLAGS_COMMON) $(CFLAGS_DEBUG) $(CFLAGS_LTO) $(LDFLAGS_COMMON) \
 		$^ -o $@ $(TESTS_INCLUDE_FLAGS) \
 		-L$(SOHOMOT_LIBDIR) -l$(SOHOMOT_LIBRARY) -Wl,-rpath=$(SOHOMOT_LIBDIR) \
 		-L$(TESTS_LIBCDIR) -l$(TESTS_LIBC) -Wl,-rpath=$(TESTS_LIBCDIR)
 
 .PHONY: testx64
-testx64: $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_SHARED) $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_STATIC) $(BUILDDIR)/$(TESTSDIR)/$(TESTS_BINARY)
+testx64: $(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_TEST_SHARED) $(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_TEST_STATIC) $(BUILDDIR)/$(TESTSDIR)/$(ARCHX64DIR)/$(TESTS_BINARY)
 
 .PHONY: clean
 clean:
