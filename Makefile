@@ -47,7 +47,7 @@ SRC_DEB_X64_OBJ := $(patsubst $(SRCDIR)/%.asm, $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DI
 # build libc.so from pattern matched .o files
 $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_SHARED): $(SRC_DEB_X64_OBJ)
 	@mkdir -p $(@D)
-	$(LINKER) -shared $^ -o $@
+	ld.$(LINKER) -shared $^ -o $@
 
 # build libc.a from pattern matched .o files
 $(BUILDDIR)/$(DEBDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_STATIC): $(SRC_DEB_X64_OBJ)
@@ -79,7 +79,7 @@ SRC_REL_X64_OBJ := $(patsubst $(SRCDIR)/%.asm, $(BUILDDIR)/$(RELDIR)/$(ARCHX64DI
 # build libc.so from pattern matched .o files
 $(BUILDDIR)/$(RELDIR)/$(ARCHX64DIR)/$(LIBDIR)/$(LIBC_SHARED): $(SRC_REL_X64_OBJ)
 	@mkdir -p $(@D)
-	$(LINKER) -shared $^ -o $@
+	ld.$(LINKER) -shared $^ -o $@
 	$(STRIP) --strip-unneeded $@
 
 # build libc.a from pattern matched .o files
@@ -127,7 +127,7 @@ SRC_TESTS_X64_OBJ := $(patsubst $(SRCDIR)/%.asm, $(BUILDDIR)/$(TESTSDIR)/%.asm.o
 
 $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_SHARED): $(SRC_TESTS_X64_OBJ)
 	@mkdir -p $(@D)
-	$(LINKER) -shared $^ -o $@
+	ld.$(LINKER) -shared $^ -o $@
 
 $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_STATIC): $(SRC_TESTS_X64_OBJ)
 	@mkdir -p $(@D)
