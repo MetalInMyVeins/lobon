@@ -40,15 +40,31 @@ Before any of that, make sure the dependencies are installed. See more in [Desig
 - `gcc`: 16.2.1
 - `gtest`: 1.18.0
 
-# Functions Checklist
+# Features Checklist
 
-- [ ] atof
-- [ ] atoi
-- [ ] atol
-- [ ] atoll
-- [ ] bsearch
-- [ ] calloc
-- [ ] free
+### Startup
+
+- [X] _start
+
+### String
+
+- [X] memchr
+- [X] memcmp
+- [X] memcpy
+- [X] memmove
+- [X] memset
+- [X] strcat
+- [X] strchr
+- [X] strcmp
+- [X] strcpy
+- [X] strlen
+- [X] strncat
+- [X] strncmp [thorough test needed]
+- [X] strncpy
+- [X] strrchr
+
+### Ctype
+
 - [X] isalnum
 - [X] isalpha
 - [X] isblank
@@ -61,36 +77,6 @@ Before any of that, make sure the dependencies are installed. See more in [Desig
 - [X] isspace
 - [X] isupper
 - [X] isxdigit
-- [ ] malloc
-- [X] memchr
-- [X] memcmp
-- [X] memcpy
-- [X] memmove
-- [X] memset
-- [ ] printf
-- [ ] qsort
-- [ ] realloc
-- [ ] scanf
-- [X] strcat
-- [X] strchr
-- [X] strcmp
-- [ ] strcoll
-- [X] strcpy
-- [ ] strcspn
-- [X] strlen
-- [X] strncat
-- [X] strncmp [thorough test needed]
-- [X] strncpy
-- [ ] strpbrk
-- [X] strrchr
-- [ ] strspn
-- [ ] strstr
-- [ ] strtok
-- [ ] strtol
-- [ ] strtoll
-- [ ] strtoul
-- [ ] strtoull
-- [ ] strxfrm
 - [X] tolower
 - [X] toupper
 
