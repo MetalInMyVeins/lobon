@@ -120,7 +120,7 @@ TEST(Ctype, Tolower)
 	char s2[10];
 	for (size_t i = 0; i < lobon_strlen(s1); ++i)
 	{
-		s2[i] = lobon_tolower(s1[i]);
+		s2[i] = (char)lobon_tolower(s1[i]);
 		if (i == lobon_strlen(s1) - 1)
 			s2[i + 1] = '\0';
 	}
@@ -133,7 +133,7 @@ TEST(Ctype, Toupper)
 	char s2[10];
 	for (size_t i = 0; i < lobon_strlen(s1); ++i)
 	{
-		s2[i] = lobon_toupper(s1[i]);
+		s2[i] = (char)lobon_toupper(s1[i]);
 		if (i == lobon_strlen(s1) - 1)
 			s2[i + 1] = '\0';
 	}

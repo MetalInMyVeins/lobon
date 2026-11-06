@@ -141,10 +141,38 @@ TESTS_INCLUDE_FLAGS := -iquote $(INCLUDEDIR) -iquote $(TESTS_INCLUDEDIR) -isyste
 TESTS_BINARY := test_all
 TESTS_SRC_ALL := $(wildcard $(TESTS_SRCDIR)/*.c)
 
+ifeq ($(origin CC),default)
+	CC := $(if $(shell command -v clang 2>/dev/null),clang,gcc)
+endif
+
+CFLAGS_COMMON := \
+	-std=c23 \
+	-Wall -Wextra -Wpedantic -pedantic-errors -Werror \
+	-Wshadow -Wconversion -Wsign-conversion \
+	-Wcast-align -Wcast-qual \
+	-Wnull-dereference \
+	-Wmissing-prototypes -Wmissing-declarations \
+	-Wstrict-prototypes \
+	-Wold-style-definition \
+	-Wdouble-promotion \
+	-Wformat=2 \
+	-Wundef -Wvla \
+	-Wpointer-arith -Wwrite-strings -Wswitch-enum \
+	-Winit-self
+
+CFLAGS_DEBUG := \
+	-g3 \
+	-fno-omit-frame-pointer \
+	-fno-optimize-sibling-calls
+
+CFLAGS_LTO := -flto=auto
+LDFLAGS_COMMON := -fuse-ld=$(LINKER)
+
 $(BUILDDIR)/$(TESTSDIR)/$(TESTS_BINARY): $(TESTS_SRC_ALL)
-	clang -std=c23 $^ -o $@ $(TESTS_INCLUDE_FLAGS) \
+	$(CC) $(CFLAGS_COMMON) $(CFLAGS_DEBUG) $(CFLAGS_LTO) $(LDFLAGS_COMMON) \
+		$^ -o $@ $(TESTS_INCLUDE_FLAGS) \
 		-L$(SOHOMOT_LIBDIR) -l$(SOHOMOT_LIBRARY) -Wl,-rpath=$(SOHOMOT_LIBDIR) \
-		-L$(TESTS_LIBCDIR) -l$(TESTS_LIBC) -Wl,-rpath=$(TESTS_LIBCDIR) \
+		-L$(TESTS_LIBCDIR) -l$(TESTS_LIBC) -Wl,-rpath=$(TESTS_LIBCDIR)
 
 .PHONY: testx64
 testx64: $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_SHARED) $(BUILDDIR)/$(TESTSDIR)/$(LIBDIR)/$(LIBC_TEST_STATIC) $(BUILDDIR)/$(TESTSDIR)/$(TESTS_BINARY)

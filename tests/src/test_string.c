@@ -32,13 +32,13 @@ TEST(String, Memcpy)
 	const char* s1 = "asdfghij";
 	char* s2 = (char*)malloc(5);
 	s2[4] = '\0';
-	const char* t = (const char*)lobon_memcpy((void*)s2, (void*)s1, 4);
+	const char* t = (const char*)lobon_memcpy(s2, s1, 4);
 	EXPECT_EQ(t[0], 'a');
 	EXPECT_EQ(t[1], 's');
 	EXPECT_EQ(t[2], 'd');
 	EXPECT_EQ(t[3], 'f');
 	EXPECT_EQ(t[4], '\0');
-	EXPECT_EQ(lobon_strlen(t), 4);
+	EXPECT_EQ(lobon_strlen(t), (size_t)4);
 }
 
 TEST(String, Memmove)
@@ -62,7 +62,7 @@ TEST(String, Memset)
 	EXPECT_EQ(t[2], 'a');
 	EXPECT_EQ(t[3], 'a');
 	EXPECT_EQ(t[4], '\0');
-	EXPECT_EQ(lobon_strlen(t), 4);
+	EXPECT_EQ(lobon_strlen(t), (size_t)4);
 	free(s);
 
 	int* ptr = (int*)malloc(sizeof(int) * 10);
@@ -132,7 +132,7 @@ TEST(String, Strcpy)
 	EXPECT_EQ(t[6], 'i');
 	EXPECT_EQ(t[7], 'j');
 	EXPECT_EQ(t[8], '\0');
-	EXPECT_EQ(lobon_strlen(t), 8);
+	EXPECT_EQ(lobon_strlen(t), (size_t)8);
 }
 
 TEST(String, Strlen)
