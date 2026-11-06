@@ -5,26 +5,32 @@ on:
     branches: [ main ]
     paths:
       - 'include/**'
-      - 'mk/**'
       - 'src/**'
       - 'tests/**'
       - 'Makefile'
+      - '.github/workflows/lobon.yaml'
       - '.github/workflows/tests.yaml'
   pull_request:
     branches: [ main ]
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Install Dependencies
-        run: sudo apt-get update && sudo apt-get install -y build-essential clang lld nasm libgtest-dev
+        run: sudo apt-get update && sudo apt-get install -y build-essential clang lld nasm git
+      
+      - name: Pull Submodules
+        run: git submdule update --init
 
-      - name: Build with GCC
-        run: make check CC=gcc CXX=g++ LD=ld
+      - name: Build Test Framework
+        run: make sohomot
 
-      - name: Build with Clang
-        run: make check CC=clang CXX=clang++ LD=ld.lld
+      - name: Clang Test Build
+        run: make testx64 CC=clang LINKER=lld
+
+      - name: GCC Test Build
+        run: make testx64 CC=gcc LINKER=bfd
