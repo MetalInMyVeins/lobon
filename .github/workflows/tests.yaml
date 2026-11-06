@@ -33,7 +33,7 @@ jobs:
         run: make testx64 CC=clang LINKER=lld
 
       - name: Run Clang Tests
-        run: build/tests/test_all
+        run: build/tests/x86_64/test_all
 
       - name: Clean Build
         run: make clean
@@ -42,4 +42,4 @@ jobs:
         run: make testx64 CC=gcc LINKER=bfd
 
       - name: Run GCC Tests
-        run: build/tests/test_all
+        run: build/tests/x86_64/test_all
