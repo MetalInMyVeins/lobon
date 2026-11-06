@@ -1,3 +1,37 @@
+########
+# List 1
+########
+_exit lobon__exit
+# _start
+abort lobon_abort
+brk lobon_brk
+close lobon_close
+exit lobon_exit
+open lobon_open
+read lobon_read
+write lobon_write
+########
+# List 2
+########
+calloc lobon_calloc
+fflush lobon_fflush
+fprintf lobon_fprintf
+fputs lobon_fputs
+free lobon_free
+fwrite lobon_fwrite
+malloc lobon_malloc
+printf lobon_printf
+putchar lobon_putchar
+puts lobon_puts
+realloc lobon_realloc
+snprintf lobon_snprintf
+stderr lobon_stderr
+stdin lobon_stdin
+stdout lobon_stdout
+vsnprintf lobon_vsnprintf
+########
+# List 3
+########
 memchr lobon_memchr
 memcmp lobon_memcmp
 memcpy lobon_memcpy
@@ -12,6 +46,22 @@ strncat lobon_strncat
 strncmp lobon_strncmp
 strncpy lobon_strncpy
 strrchr lobon_strrchr
+########
+# List 4
+########
+strcspn lobon_strcspn
+strdup lobon_strdup
+strpbrk lobon_strpbrk
+strspn lobon_strspn
+strstr lobon_strstr
+strtok lobon_strtok
+strtol lobon_strtol
+strtoll lobon_strtoll
+strtoul lobon_strtoul
+strtoull lobon_strtoull
+########
+# List 5
+########
 isalnum lobon_isalnum
 isalpha lobon_isalpha
 isblank lobon_isblank
@@ -26,3 +76,26 @@ isupper lobon_isupper
 isxdigit lobon_isxdigit
 tolower lobon_tolower
 toupper lobon_toupper
+########
+# List 6
+########
+assert lobon_assert
+errno lobon_errno
+fclose lobon_fclose
+fgetc lobon_fgetc
+fgets lobon_fgets
+fopen lobon_fopen
+fread lobon_fread
+getchar lobon_getchar
+perror lobon_perror
+strerror lobon_strerror
+########
+# List 7
+########
+abs lobon_abs
+bsearch lobon_bsearch
+getenv lobon_getenv
+qsort lobon_qsort
+rand lobon_rand
+srand lobon_srand
+time lobon_time
