@@ -5,7 +5,6 @@ on:
     branches: [ main ]
     paths:
       - 'include/**'
-      - 'mk/**'
       - 'src/**'
       - 'Makefile'
       - '.github/workflows/lobon.yaml'
@@ -14,16 +13,16 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Install Dependencies
-        run: sudo apt-get update && sudo apt-get install -y build-essential clang lld nasm
+        run: sudo apt-get update && sudo apt-get install -y build-essential lld nasm
 
-      - name: Build with GCC
-        run: make lib CC=gcc CXX=g++ LD=ld
+      - name: Debug Build
+        run: make debx64 LINKER=lld
 
-      - name: Build with Clang
-        run: make lib CC=clang CXX=clang++ LD=ld.lld
+      - name: Release Build
+        run: make relx64 LINKER=bfd
